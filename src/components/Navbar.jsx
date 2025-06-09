@@ -1,9 +1,10 @@
 function Navbar (){
     return(
-        <div>
-            <h1 className="text-4xl text-purple-600">This is our Navbar</h1>
-        </div>
+        <nav>
+            <h1 className="text-black font-bold text-2xl">Library Dashboard</h1>
+            
 
+        </nav>
     );
 }
 export default Navbar
