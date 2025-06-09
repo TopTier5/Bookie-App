@@ -9,4 +9,4 @@ function DisplayPages (){
 
     );
 }
-export default DisplayPages
+export default DisplayPages 
