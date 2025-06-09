@@ -6,21 +6,24 @@ import Footer from "../components/Footer";
 function Home (){
     return(
         <>
-        <div>
-        <Sidebar />
+        <div className="flex h-screen">
+            {/* Sidebar on the left */}
+            <aside className="w-64 bg-[#AD856F]">
+              <Sidebar />
+            </aside>
 
-        <div>
-        <Navbar />
-        <section className=" flex min-h-screen flex-1">
-            <div className="grid grid-cols-4 gap-5 border-b-grey">
-                <h1>Total books <br /> 6</h1> 
-                <h3>Total collection</h3>
-                
+            {/* Main component on the right */}
+            <div className="flex flex-col flex-1">
+            {/* Navbar at the top */}
+            <Navbar />
+
+            {/* Page content */}
+            <main className="p-6 bg-white flex-1 overflow-auto">
+            </main>
+            </div>
             </div>
 
-        </section>
-        </div>
-        </div>
+
          </>
     );
 }
