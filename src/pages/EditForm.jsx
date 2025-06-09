@@ -1,12 +1,15 @@
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 
-function EditForm (){
-    return(
-        <div>
-            <h1 className="text-4xl text-purple-600">This is our Edit Form</h1>
-        </div>
 
-    );
+export default function EditForm() {
+    return (
+        <>
+            <Navbar />
+            <section className="bg-pink-300">
+                <h1 className="text-black text-bold w-[30%] mx-auto text-center pt-32">Add New Book
+                </h1>
+            </section>
+        </>
+    )
 }
-export default EditForm
+
