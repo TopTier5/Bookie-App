@@ -1,9 +1,7 @@
-function Navbar (){
-    return(
-        <nav>
-            <h1 className="text-black font-bold text-2xl">Library Dashboard</h1>
-            
-
+function Navbar() {
+    return (
+        <nav className="bg-[#AD856F] py-4 flex items-center">
+              
         </nav>
     );
 }
