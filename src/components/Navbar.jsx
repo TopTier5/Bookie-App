@@ -5,7 +5,7 @@ function Navbar() {
                 <h2 className="text-lg font-light text-black">Library Dashboard <p className="text-sm text-gray-400">Manage your book collection</p></h2>
                 
                 <div className="ml-[250px]">
-                <input type="text" placeholder="Search books..." className="border border-gray-300 rounded-md px-10 py-2 text-sm" />
+                    <input type="text" placeholder="🔍Search books..." className="border border-gray-300 rounded-md px-10 py-2 text-sm" />
               </div>
 
               <div className="ml-10">
