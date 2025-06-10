@@ -1,16 +1,45 @@
   import React from 'react';
  import napo2 from '../assets/images/napo2.jpg';
+ import war from '../assets/images/war.webp';
+ import Richard from '../assets/images/Richard.jpg';
+ import eli1 from '../assets/images/eli1.jpg';
+ import fall from '../assets/images/fall.webp';
+ import baby1 from '../assets/images/napo2.jpg';
+ import react from '../assets/images/react.jpg';
+ import millio from '../assets/images/millio.jpg';
+ import dad from '../assets/images/dad.jpg';
+ import eli3 from '../assets/images/eli3.jpg';
+ import elis2 from '../assets/images/elis2.jpg';
+ import js from '../assets/images/js.jpg';
+ import noexcus from '../assets/images/noexcus.webp'
+
 
 function BookCard(){
     return(
     
 
-    <div className="rounded-lg overflow-hidden shadow-2xl bg-slate-200 text-gray-400 mt-5 ml-5">
+    <div className="rounded-lg overflow-hidden shadow-2xl bg-white text-gray-400 mt-5 ml-5">
       <div className="relative">
     
         {/* Book1 Image */}
-         <img src={napo2} />
-        <div className="absolute top-4 left-4 bg-slate-200 text-gray-400 text-xs font-semibold px-3 py-1 rounded-full">
+         <img src={dad} />
+         {/* <img src={noexcus} /> */}
+         {/* <img src={napo2} /> */}
+         {/* <img src={war} />
+         <img src={Richard} />
+         <img src={eli1} />
+         <img src={fall} />
+         <img src={baby1} />
+          <img src={noexcus} />
+         <img src={react} />
+         <img src={millio} />
+         <img src={fall} />
+         <img src={elis2} />
+          <img src={Richard} />
+         <img src={eli3} />
+         <img src={js} /> */}
+       
+        <div className="absolute top-4 left-4 bg-white text-purple-500 text-xs font-semibold px-3 py-1 rounded-full">
           Available
         </div>
       </div>
