@@ -1,6 +1,6 @@
 function Sidebar() {
     return ( 
-        <nav className="bg-[#AD856F] w-64 h-screen">
+        <nav className="bg-white w-64 h-screen border-r border-gray-600">
             <div className="flex items-center gap-3 px-4 py-4">
                     <div className="ml-5 px-3 bg-[#33384C] ">
                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-icon lucide-book text-white">

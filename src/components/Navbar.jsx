@@ -1,6 +1,6 @@
 function Navbar() {
     return (
-        <nav className="bg-white px-6 py-4 shadow-sm w-full">
+        <nav className="bg-white px-6 py-4 shadow-sm w-full border-b border-gray-400">
             <div className="flex items-center gap-4">
                 <h2 className="text-lg font-light text-black">Library Dashboard <p className="text-sm text-gray-400">Manage your book collection</p></h2>
                 
