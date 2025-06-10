@@ -5,7 +5,7 @@ function BookCard(){
     return(
     
 
-    <div className=" h-[20%] w-[20%] rounded-lg overflow-hidden shadow-2xl bg-slate-200 text-gray-400 mt-5 ml-5">
+    <div className="rounded-lg overflow-hidden shadow-2xl bg-slate-200 text-gray-400 mt-5 ml-5">
       <div className="relative">
     
         {/* Book1 Image */}
