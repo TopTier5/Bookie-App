@@ -4,19 +4,13 @@ import { Link } from "react-router";
 function Sidebar() {
     return (
         <nav className="bg-white w-64 h-screen border-r-1 border-gray-400">
-            {/* <div className="flex items-center gap-3 px-4 py-4 border-b-1 border-gray-400">
-                <div className="bg-[#1D4ED8] ml-10">
-                    <Link to="/">
-                        <img src={AppLogo} alt="Logo" className="h-18 w-18 object-contain" />
-                    </Link>
-                </div>
-            </div> */}
-            <div className="flex items-center gap-3 px-4 py-5 border-b-1 border-gray-400">
-                <div className="bg-[#1D4ED8] w-8 h-8">
+           
+            <div className="flex items-center space-x-3 p-4 border-b-1 border-gray-400">
+                <div className="bg-[#1D4ED8] w-8 h-8 flex items-center justify-center rounded-md">
                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-icon lucide-book"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/></svg>
                 </div>
 
-                <h1>TopTierLMS <br />v1.0 </h1>
+                <h1 className="text-lg font-semibold">TopTierLMS <span className="flex flex-col text-xs text-[#6B7280] font-normal">v1.1.0</span></h1>
 
             </div>
 
