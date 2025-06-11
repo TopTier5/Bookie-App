@@ -1,5 +1,5 @@
-import AppLogo from "../assets/images/pic2.png"
 import { Link } from "react-router";
+
 
 function Sidebar() {
     return (
