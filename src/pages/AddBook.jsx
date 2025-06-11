@@ -1,14 +1,35 @@
 import React from "react";
 import Navbar from "../components/Navbar";
+import { apiClient } from "../api/client";
 
 export default function AddBook() {
+    const postBook = (event) => {
+        event.preventDefault();
+
+        // Collect form input
+        const data = new FormData(event.target);
+
+        // Post data to api
+        apiClient
+            .post("/api/v1/books", data, {
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            })
+            .then((response) => {
+                console.log(response);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    };
     return (
         <>
             <Navbar />
             <section className="bg-[#FFF3DF] ">
-                <div className="w-[60%] mx-auto mt-10 bg-[#FFFDF8]  border border-[#FDE68A] rounded-2xl shadow-lg p-8">
-                    <form className="flex flex-col space-y-6">
-                        <h1 className="text-black font-bold "> 📖 Add New Book</h1>
+                <div className="w-[60%] mx-auto bg-[#FFFDF8]  border border-[#FDE68A] rounded-2xl shadow-lg p-8">
+                    <form onSubmit={postBook} className="flex flex-col space-y-6 text-center">
+                        <h1 className="text-black text-2xl font-bold "> 📖 Add New Book</h1>
                         <h3 className="text-black">Fill in the details below to add a new book to your library.</h3>
 
 
@@ -17,7 +38,7 @@ export default function AddBook() {
                                 <label className="block mb-2 font-bold text-black">Title*</label>
                                 <input
                                     type="text"
-                                    placeholder="Enter book title"
+                                    name="title"
                                     className="w-full border border-blue-200 rounded px-4 py-2"
                                 />
                             </div>
@@ -25,7 +46,7 @@ export default function AddBook() {
                                 <label className="block mb-2 font-bold text-black">Author*</label>
                                 <input
                                     type="text"
-                                    placeholder="Enter author name"
+                                    name="author"
                                     className="w-full border border-blue-200 rounded px-4 py-2"
                                 />
                             </div>
@@ -33,65 +54,40 @@ export default function AddBook() {
 
 
                         <div className="flex flex-row justify-between space-x-4">
-                            <div className="w-1/2 space-y-4">
+                            <div className="w-1/2">
                                 <div>
-                                    <label className="block mb-2 font-bold text-black">Genre</label>
+                                    <label className="block mb-2 font-bold text-black">Category</label>
                                     <input
                                         type="text"
-                                        placeholder="Literature"
+                                        placeholder="category"
                                         className="w-full border border-blue-200 rounded px-4 py-2"
                                     />
                                 </div>
+                            </div>    
+                                
+                            <div className="w-1/2">
                                 <div>
-                                    <label className="block mb-2 font-bold text-black">Status</label>
+                                    <label className="block mb-2 font-bold text-black">Publication Year</label>
                                     <input
-                                        type="text"
-                                        placeholder="Available "
+                                        type="date"
+                                        name="publicationYear"
                                         className="w-full border border-blue-200 rounded px-4 py-2"
                                     />
                                 </div>
-                            </div>
-
-                            <div className="w-1/2 space-y-4">
-                                <div>
-                                    <label className="block mb-2 font-bold text-black">Pages</label>
-                                    <input
-                                        type="number"
-                                        placeholder=" 30"
-                                        className="w-full border border-blue-200 rounded px-4 py-2"
-                                    />
-                                </div>
-                                <div>
-                                    <label className="block mb-2 font-bold text-black">Location</label>
-                                    <input
-                                        type="text"
-                                        placeholder="location"
-                                        className="w-full border border-blue-200 rounded px-4 py-2"
-                                    />
-                                </div>
-                            </div>
+                            </div>    
                         </div>
 
-                        {/* Cover URL */}
-                        <div>
+                        
+                         <div>
                             <label className="block mb-2 font-bold text-black">Cover Image URL</label>
                             <input
-                                type="url"
-                                placeholder="https://"
+                                type="text"
+                                name="image"
                                 className="w-full border border-blue-200 rounded px-4 py-2"
                             />
                         </div>
 
-                        {/* Description */}
-                        <div>
-                            <label className="block mb-2 font-bold text-black">Description</label>
-                            <textarea
-                                placeholder="Enter book description"
-                                className="w-full border border-blue-200 rounded px-4 py-2 min-h-[100px]"
-                            ></textarea>
-                        </div>
-
-                        {/* Submit Button */}
+                        
                         <div className="flex justify-end">
                             <button
                                 type="submit"
