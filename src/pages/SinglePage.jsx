@@ -14,12 +14,7 @@ function SinglePage (){
           </svg>
           Back to Library
         </a>
-        {/* <h1 className="h-15">┃</h1> */}
-        <div className="ml-10">
-        <h1 className="text-xl sm:text-2xl font-semibold text-gray-800">Book Details</h1>
-        <p>View and manage book information</p>
-        </div>
-        </div>
+          </div>
         
         <div className="flex space-x-3 mr-10">
           <button className="flex items-center px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300">
