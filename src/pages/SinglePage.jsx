@@ -1,11 +1,31 @@
 import Navbar from "../components/Navbar";
 import war2 from "../assets/images/war2.webp";
 import { useSearchParams } from "react-router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { apiClient } from "../api/client";
 
 
 
 function SinglePage (){
+   const [searchParams] = useSearchParams();
+      const id = searchParams.get('id');
+  
+      const [book, setBook] = useState({});
+  
+      const getBook = () => {
+          apiClient.get(`/api/v1/books/${id}`)
+              .then((response) => {
+                  console.log(response.data);
+                  setBook(response.data.data);
+              })
+              .catch((error) => {
+                  console.log(error);
+              })
+      }
+  
+      useEffect(getBook, []);
+  
+
     return(
     <div className="min-h-screen bg-gray-100 p-4 overflow-x-hidden">
       {/*Navbar */}
