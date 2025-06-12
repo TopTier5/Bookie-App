@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar";
 import war2 from "../assets/images/war2.webp";
 
+
 function SinglePage (){
     return(
     <div className="min-h-screen bg-gray-100 p-4 sm:p-6 lg:p-8">
