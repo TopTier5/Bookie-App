@@ -46,7 +46,7 @@ function EditForm() {
 
 
                             <div className="w-20%">
-                                <label className="block mb-2 font-bold text-black">Cateogry</label>
+                                <label className="block mb-2 font-bold text-black">Category</label>
                                 <input
                                     type="text"
                                     name="category"
