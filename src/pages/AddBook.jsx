@@ -66,7 +66,7 @@ export default function AddBook() {
                                     name="title"
                                     className="w-full border border-blue-200 rounded px-4 py-2"
                                     required>
-                               </input>
+                                </input>
                             </div>
 
                             <div className="w-20%">
@@ -75,7 +75,7 @@ export default function AddBook() {
                                     type="text"
                                     name="author"
                                     className="w-full border border-blue-200 rounded px-4 py-2"
-                                    
+
                                 />
                             </div>
 
@@ -102,19 +102,28 @@ export default function AddBook() {
                                 />
                             </div>
 
-                            </div>
+                        </div>
 
-                         <div className="w-120%">
-                                <label className="block mb-2 font-bold text-black">Copy URL Image</label>
-                                <input
-                                    type="text"
-                                    name="image"
-                                    className="w-full border border-blue-200 rounded px-4 py-2"
-                                />
-                            </div>
+                        <div className="w-120%">
+                            <label className="block mb-2 font-bold text-black">Copy URL Image</label>
+                            <input
+                                type="text"
+                                name="image"
+                                className="w-full border border-blue-200 rounded px-4 py-2"
+                            />
+                        </div>
+
+                        <div className="w-120%">
+                            <label className="block mb-2 font-bold text-black">Description</label>
+                            <input
+                                type="text"
+                                name="description"
+                                className="w-full border border-blue-200 rounded px-4 py-2"
+                            />
+                        </div>
 
 
-                        
+
 
 
 
