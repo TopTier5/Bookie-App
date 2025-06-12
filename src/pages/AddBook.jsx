@@ -28,7 +28,7 @@ export default function AddBook() {
     return (
         <>
             <Navbar />
-            <section className="bg-[#FFF3DF] py-8 ">
+            <section className="bg-[#FFF3DF] py-8">
                 <div className="w-[60%] mx-auto bg-[#FFFDF8]  border border-[#FDE68A] rounded-2xl shadow-lg p-8 ">
                     <form onSubmit={postBook} className="flex flex-col space-y-6 text-center">
                         <h1 className="text-black text-2xl font-bold "> 📖 Add New Book</h1>
