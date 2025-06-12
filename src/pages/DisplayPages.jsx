@@ -19,6 +19,7 @@ function DisplayPages() {
             })
     }
     useEffect(getBooks, []);
+
     return (
         <>
             <div className="border rounded-lg border-gray-50 bg-gray-50 w-[35%] h-10 mt-5 flex justify-around items-center ml-5">
