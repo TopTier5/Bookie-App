@@ -58,60 +58,53 @@ export default function AddBook() {
                         <h1 className="text-black text-2xl font-bold "> 📖 Add New Book</h1>
                         <h3 className="text-black">Fill in the details below to add a new book to your library.</h3>
 
-
-                        <div className="flex flex-row justify-between space-x-4">
-                            <div className="w-1/2">
+                        <div className="grid grid-cols-2 gap-4 justify-between space-x-4">
+                            <div className="w-20%">
                                 <label className="block mb-2 font-bold text-black">Title*</label>
                                 <input
                                     type="text"
                                     name="title"
                                     className="w-full border border-blue-200 rounded px-4 py-2"
-                                />
+                                    required>
+                               </input>
                             </div>
-                            <div className="w-1/2">
+
+                            <div className="w-20%">
                                 <label className="block mb-2 font-bold text-black">Author*</label>
                                 <input
                                     type="text"
                                     name="author"
+                                    className="w-full border border-blue-200 rounded px-4 py-2"
+                                    
+                                />
+                            </div>
+
+
+
+
+                            <div className="w-20%">
+                                <label className="block mb-2 font-bold text-black">Publication Year</label>
+                                <input
+                                    type="date"
+                                    name="publicationYear"
+                                    className="w-full border border-blue-200 rounded px-4 py-2"
+                                />
+                            </div>
+
+
+
+                            <div className="w-20%">
+                                <label className="block mb-2 font-bold text-black">Category</label>
+                                <input
+                                    type="text"
+                                    name="category"
                                     className="w-full border border-blue-200 rounded px-4 py-2"
                                 />
                             </div>
                         </div>
 
 
-                        <div className="flex flex-row justify-between space-x-4">
-                            <div className="w-1/2">
-                                <div>
-                                    <label className="block mb-2 font-bold text-black">Category</label>
-                                    <input
-                                        type="text"
-                                        placeholder="category"
-                                        className="w-full border border-blue-200 rounded px-4 py-2"
-                                    />
-                                </div>
-                            </div>
-
-                            <div className="w-1/2">
-                                <div>
-                                    <label className="block mb-2 font-bold text-black">Publication Year</label>
-                                    <input
-                                        type="date"
-                                        name="publicationYear"
-                                        className="w-full border border-blue-200 rounded px-4 py-2"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div>
-                            <label className="block mb-2 font-bold text-black">Cover Image URL</label>
-                            <input
-                                type="text"
-                                name="image"
-                                className="w-full border border-blue-200 rounded px-4 py-2"
-                            />
-                        </div>
+                        
 
 
 
