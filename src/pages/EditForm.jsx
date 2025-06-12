@@ -14,9 +14,12 @@ function EditForm() {
                         </svg>
                         Back to Book 
                     </Link>
+
+                    <div className="absolute top-0 left-50 p-4">
                     <div className="text-center md:text-left">
                         <h1 className="text-xl  font-semibold text-gray-800 ">Edit Book </h1>
                         <h2 className="text-base  font-medium text-gray-800 ">Update Book Information</h2>
+                    </div>
                     </div>
                 </div>
                 </div>             
