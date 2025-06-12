@@ -1,14 +1,17 @@
 import Navbar from "../components/Navbar";
 import war2 from "../assets/images/war2.webp";
+import { useSearchParams } from "react-router";
+import { useEffect } from "react";
+
 
 
 function SinglePage (){
     return(
-    <div className="min-h-screen bg-gray-100 p-4 sm:p-6 lg:p-8">
+    <div className="min-h-screen bg-gray-100 p-4 overflow-x-hidden">
       {/*Navbar */}
-      <div className="flex items-center justify-between mb-6 bg-white w-full ">
+      <div className="flex items-center justify-between mb-6 bg-white ml-1  md:mr-6 py-2 ">
         <div className="flex flex-row">
-            <a href="/library" className="flex items-center text-gray-600 hover:text-blue-600 ml-20">
+            <a href="/library" className="flex items-center text-black hover:text-blue-600 md:ml-20 md:text-lg text-sm whitespace-nowrap m-2 overflow-hidden ">
           {/* Back Arrow Icon */}
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
             <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -18,19 +21,19 @@ function SinglePage (){
           </div>
         
         <div className="flex space-x-3 mr-10">
-          <button className="flex items-center px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300">
+          <button className="flex items-center md:px-4 md:py-2 md:bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 md:text-lg text-sm px-2 ">
             {/* Edit Icon */}
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" className="md:h-5 md:w-5 h-8 w-8 mr-1" viewBox="0 0 20 20" fill="currentColor">
               <path d="M13.586 3.586a2 2 0 112.828 2.828l-7.793 7.793-2.828.707.707-2.828 7.793-7.793zM10.16 5.586L14.414 9.84 8.707 15.543l-4.257.652.652-4.257 5.707-5.707z" />
             </svg>
-            Edit
+           <span className="hidden md:inline">Edit</span> 
           </button>
-          <button className="flex items-center px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600">
+          <button className="flex items-center px-4 py-2 ml-3 md:bg-red-500 md:text-white text-red-700 rounded-md hover:bg-red-600 hover:text-white">
             {/* Delete Icon */}
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" className=" h-7 w-7 md:h-5 md:w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 011-1h4a1 1 0 110 2H8a1 1 0 01-1-1zm0 4a1 1 0 112 0v1a1 1 0 11-2 0v-1z" clipRule="evenodd" />
             </svg>
-            Delete
+            <span className="hidden md:inline">Delete</span>
           </button>
         </div>
       </div>
