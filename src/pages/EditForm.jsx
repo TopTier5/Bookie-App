@@ -120,6 +120,16 @@ function EditForm() {
                         </div>
 
 
+                        <div className="w-120%">
+                                <label className="block mb-2 font-bold text-black">Copy URL Image</label>
+                                <input
+                                    type="text"
+                                    name="image"
+                                    className="w-full border border-blue-200 rounded px-4 py-2"
+                                />
+                            </div>
+
+
                         <div className="flex justify-end">
                             <button
                                 type="submit"
