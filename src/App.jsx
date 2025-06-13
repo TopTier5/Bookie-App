@@ -1,4 +1,5 @@
 import { createBrowserRouter, RouterProvider, } from "react-router";
+import { Toaster } from "sonner";
 
 import Home from "./pages/Home";
 import AddBook from "./pages/AddBook";
@@ -24,6 +25,7 @@ function App() {
   return (
     <>
       <RouterProvider router={BookAppRouter} />
+       <Toaster richColors />
     </>
   );
 }

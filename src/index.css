@@ -8,3 +8,26 @@
   --color-blue: #1D4ED8;
   --color-greyish:#F9FAFB;
 }
+
+
+@keyframes bounceInFade {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateY(-100px);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.1) translateY(10px);
+  }
+  80% {
+    transform: scale(0.95) translateY(-5px);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+
+.trending-bounce {
+  animation: bounceInFade 1s ease-out forwards ;
+  animation-delay: 1.3s
+}

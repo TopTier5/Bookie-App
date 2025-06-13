@@ -1,36 +1,75 @@
 import Navbar from "../components/Navbar";
 import war2 from "../assets/images/war2.webp";
+import { Link, useSearchParams,useNavigate } from "react-router";
+import { useEffect, useState } from "react";
+import { apiClient } from "../api/client";
+import { toast } from "sonner";
+
 
 
 function SinglePage (){
+  const navigate=useNavigate()
+   const [searchParams] = useSearchParams();
+      const id = searchParams.get('id');
+      console.log(id)
+  
+      const [book, setBook] = useState({});
+      console.log(book)
+  
+      const getBook = () => {
+          apiClient.get(`/api/v1/books/${id}`)
+              .then((response) => {
+                  console.log(response.data);
+                  setBook(response.data.data);
+              })
+              .catch((error) => {
+                  console.log(error);
+              })
+      }
+  
+      useEffect(getBook, []);
+
+      const deleteBook = (bookId) => {
+        apiClient.delete(`/api/v1/books/${bookId}`)
+            .then((response) => {
+                console.log(response);
+                navigate('/');
+            })
+            .catch((error) => {
+                console.log(error);
+                toast.error(error.response.data.message)
+            })
+    }
+  
+
     return(
-    <div className="min-h-screen bg-gray-100 p-4 sm:p-6 lg:p-8">
+    <div className="min-h-screen bg-gray-100 p-4 overflow-x-hidden">
       {/*Navbar */}
-      <div className="flex items-center justify-between mb-6 bg-white w-full ">
+      <div className="flex items-center justify-between mb-6 bg-white ml-1  md:mr-6 py-2 ">
         <div className="flex flex-row">
-            <a href="/library" className="flex items-center text-gray-600 hover:text-blue-600 ml-20">
+            <Link to={'/displaypages'} className="flex items-center text-black hover:text-blue-600 md:ml-20 md:text-lg text-sm whitespace-nowrap m-2 overflow-hidden ">
           {/* Back Arrow Icon */}
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
             <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
           </svg>
           Back to Library
-        </a>
+        </Link>
           </div>
         
         <div className="flex space-x-3 mr-10">
-          <button className="flex items-center px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300">
+          <Link to={`/editform?id=${id}`}className="flex items-center md:px-4 md:py-2 md:bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 md:text-lg text-sm px-2 ">
             {/* Edit Icon */}
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" className="md:h-5 md:w-5 h-8 w-8 mr-1" viewBox="0 0 20 20" fill="currentColor">
               <path d="M13.586 3.586a2 2 0 112.828 2.828l-7.793 7.793-2.828.707.707-2.828 7.793-7.793zM10.16 5.586L14.414 9.84 8.707 15.543l-4.257.652.652-4.257 5.707-5.707z" />
             </svg>
-            Edit
-          </button>
-          <button className="flex items-center px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600">
+           <span className="hidden md:inline">Edit</span> 
+          </Link>
+          <button  onClick={()=> deleteBook (id)}  className="flex items-center px-4 py-2 ml-3 md:bg-red-500 md:text-white text-red-700 rounded-md hover:bg-red-600 hover:text-white">
             {/* Delete Icon */}
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" className=" h-7 w-7 md:h-5 md:w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 011-1h4a1 1 0 110 2H8a1 1 0 01-1-1zm0 4a1 1 0 112 0v1a1 1 0 11-2 0v-1z" clipRule="evenodd" />
             </svg>
-            Delete
+            <span className="hidden md:inline">Delete</span>
           </button>
         </div>
       </div>
@@ -47,7 +86,7 @@ function SinglePage (){
             <div className="absolute top-7 left-4 bg-gray-300 text-black text-xs font-semibold px-3 py-1 rounded-full hover:bg-white">
             Available
           </div>
-          <img src={war2} className="w-[80%] h-[85%] rounded-lg object-cover shadow-sm mt-5" />
+          <img src={book.image} className="w-[80%] h-[85%] rounded-lg object-cover shadow-sm mt-5" />
         </div>
 
       <div className="p-6 flex flex-col gap-3">
@@ -55,7 +94,7 @@ function SinglePage (){
         {/* Right Section - Book Details */}
         <div className="md:w-2/3 flex-row">
           <div className=" relative flex items-center justify-between mb-2 ">
-            <h2 className="text-3xl font-bold text-gray-900  ml-10 mt-5">Think and Grow Rich</h2>
+            <h2 className="text-3xl font-bold text-gray-900  ml-10 mt-5">{book.title}</h2>
             <div className="absolute top-5 right-0 bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded-full border border-green-200">
               Available
             </div>
@@ -65,10 +104,10 @@ function SinglePage (){
             <svg xmlns="http://www.w3.org/2000/svg" className=" text-sm h-5 w-5 mr-2 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
             </svg>
-            Napoleon Hills
+            {book.author}
           </p>
           <p className="text-gray-700 leading-relaxed mb-6 whitespace-nowrap px-5 ml-6 mt-8 ">
-          A timeless American classic about the Jazz Age and the pursuit of the American Dream. Set in the summer <br /> of 1922, the story follows Nick Carraway as he observes his mysterious neighbor Jay Gatsby and his <br />obsession with the beautiful Daisy Buchanan.
+         {book.description}
           </p>
           </div>
           </div>
@@ -111,7 +150,7 @@ function SinglePage (){
               </svg>
               <div>
                 <p className="font-medium text-gray-600 text-sm">Published Year</p>
-                <p>1925</p>
+                <p>{book.publicationYear}</p>
               </div>
             </div>
 
