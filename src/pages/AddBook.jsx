@@ -107,7 +107,7 @@ export default function AddBook() {
                         </div>
 
                         <div className="w-120%">
-                            <label className="block mb-2 font-bold text-black">Copy URL Image</label>
+                            <label className="block mb-2 font-bold text-black">Cover Image URL</label>
                             <input
                                 type="text"
                                 name="image"
