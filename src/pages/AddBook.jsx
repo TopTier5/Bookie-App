@@ -39,9 +39,11 @@ export default function AddBook() {
                         Back to Library
                     </Link>
 
-                    <div className="text-center md:text-left ml-4">
-                        <h1 className="text-xl sm:text-2xl font-semibold text-gray-800">Book Details</h1>
+                    <div className="absolute top-0 left-50 p-4">     
+                        <div className="text-center md:text-left">
+                        <h1 className="text-xl sm:text-xl font-semibold text-gray-800">Book Details</h1>
                         <p>View and manage book information</p>
+                        </div>
                     </div>
                 </div>
 
