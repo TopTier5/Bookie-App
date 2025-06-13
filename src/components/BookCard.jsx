@@ -16,10 +16,10 @@ function BookCard({ book }) {
     }
     return (
 
-        <div className=" relative rounded-lg overflow-hidden shadow-2xl bg-white text-gray-400 mt-5 ml-5">
+        <div className=" relative rounded-lg overflow-hidden shadow-2xl bg-white text-gray-400 mt-5">
             <div className="relative">
 
-                <img src={book.image} className="h-50 w-70 object-cover flex justify-items-center" alt={`cover of ${book.title}`}/>
+                <img src={book.image} className="h-50 w-[100%] object-cover flex justify-items-center" alt={`cover of ${book.title}`}/>
 
                 <div className="absolute top-4 left-4 bg-white text-purple-500 text-xs font-semibold px-3 py-1 rounded-full">
                     Available
