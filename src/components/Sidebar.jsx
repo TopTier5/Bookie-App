@@ -3,8 +3,7 @@ import { Link } from "react-router";
 
 function Sidebar() {
   return (
-    <nav
-      className="bg-white w-64 h-screen border-r border-gray-300">
+    <nav className="bg-white w-64 h-screen border-r border-gray-300">
       <div className="flex items-center space-x-3 p-4 border-b border-gray-300">
         <div className="bg-[#1D4ED8] w-8 h-8 flex items-center justify-center rounded-md">
           <svg
@@ -101,4 +100,5 @@ function Sidebar() {
 }
 
 export default Sidebar;
+
 
