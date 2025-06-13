@@ -16,12 +16,12 @@ function BookCard({ book }) {
     }
     return (
 
-        <div className=" relative rounded-lg overflow-hidden shadow-2xl bg-white text-gray-400 mt-5">
+        <div className=" relative rounded-lg overflow-hidden border border-[#334155] shadow-2xl bg-white text-gray-400 mt-5 w-[100%]">
             <div className="relative">
 
                 <img src={book.image} className="h-50 w-[100%] object-cover flex justify-items-center" alt={`cover of ${book.title}`}/>
 
-                <div className="absolute top-4 left-4 bg-white text-purple-500 text-xs font-semibold px-3 py-1 rounded-full">
+                <div className="absolute top-4 left-4 bg-green-100 border-green-200 text-black text-xs font-semibold px-3 py-1 rounded-full">
                     Available
                 </div>
             </div>
@@ -29,8 +29,8 @@ function BookCard({ book }) {
 
 
             <div className="p-4 items-center">
-                <div className="font-bold text-xl capitalize mb-2">{book.title}</div>
-                <p className="text-gray-400 text-base flex items-center mb-2 capitalize">
+                <div className="font-bold text-xl capitalize mb-2 text-black">{book.title}</div>
+                <p className="text-gray-600 text-base flex items-center mb-2 capitalize">
                     {/* User icon*/}
                     <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd"></path>
@@ -39,7 +39,7 @@ function BookCard({ book }) {
                 </p>
 
                 <div className="flex justify-between items-center text-gray-400 text-sm mb-16 ">
-                    <p className="flex items-center">
+                    <p className="flex items-center text-gray-600">
                         {/* calendar icon */}
                         <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd"></path>
@@ -52,7 +52,7 @@ function BookCard({ book }) {
             </div>
 
             {/* View,edit, and delete button */}
-            <div className="flex justify-center space-x-4 absolute bottom-3 border border-gray-100 py-3 rounded-lg bg-gray-100 shadow-2xl">
+            <div className="flex justify-center space-x-2 px-2 items-center absolute bottom-3 border border-gray-100 py-3 rounded-lg bg-gray-100 shadow-2xl lg:-left-1.5 md:-left-8">
 
                 
                 <Link to={`/editform?id=${book._id}`} className="flex items-center px-2 py-1 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 text-xs ml-4">
@@ -64,7 +64,7 @@ function BookCard({ book }) {
                 </Link>
                 
 
-                <Link to={`/singlepage?id=${book._id}`} className="flex items-center px-2 py-1 bg-gray-200 border-gray-200 text-gray-700 rounded-md hover:bg-red-600 whitespace-nowrap text-xs">
+                <Link to={`/singlepage?id=${book._id}`} className="flex items-center px-2 py-1 bg-gray-200 border-gray-200 text-gray-700 rounded-md hover:bg-gray-200 whitespace-nowrap text-xs">
                     {/* View Icon */}
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-5 h-5 mr-1.5">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
@@ -85,4 +85,13 @@ function BookCard({ book }) {
 };
 
 export default BookCard;
+
+
+
+
+
+
+
+
+
 

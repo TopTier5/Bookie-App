@@ -80,33 +80,27 @@ function SinglePage (){
 
       {/* Main Content Card */}
         {/* Left Section - Book Image */}
-        {/* <div className="md:w-1/3 relative flex-shrink-0"> */}
-       <div className="flex flex-col md:flex-row"> {/* CHANGE: flex-col on small screens, flex-row on md and larger */}
+       <div className="flex flex-col md:flex-row"> 
     {/* Left Section - Image */}
-    {/* CHANGE: Added responsive width classes and ensure it doesn't shrink */}
     <div className="relative w-full md:w-1/3 lg:w-1/4 flex-shrink-0">
-        <div className="absolute top-7 left-4 bg-gray-300 text-black text-xs font-semibold px-3 py-1 rounded-full hover:bg-white">
+        <div className="absolute top-7 left-4 bg-green-100 border-green-200 text-black text-xs font-semibold px-3 py-1 rounded-full hover:bg-white mt-0">
             Available
         </div>
-        {/* CHANGE: Image now fills its parent's dimensions */}
-        <img src={book.image} className="w-200 h-200 rounded-lg object-contain shadow-sm mt-5 bg-white" />
-        {/* REMOVED flex-shrink-0 from img, as it's now on its parent container */}
+        <img src={book.image} className="w-[200] h-[200] rounded-lg object-contain shadow-sm p-0 bg-white mt-5" />
     </div>
 
     {/* Right Section - Description and Info */}
-    {/* CHANGE: Added flex-grow and responsive width classes */}
     <div className="p-6 flex flex-col gap-3 flex-grow w-full md:w-2/3 lg:w-3/4 mr-10">
         <div className="border rounded-xl border-gray-300 bg-white shadow-lg">
             {/* Right Section - Book Details */}
-            {/* This div's classes are kept as requested, assuming they are for a nested layout within the description */}
             <div className="md:w-2/3 flex-row">
                 <div className=" relative flex items-center justify-between mb-2 ">
-                    <h2 className="text-3xl font-bold text-gray-900 ml-10 mt-5">{book.title}</h2>
-                    <div className="absolute top-5 right-0 bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded-full border border-green-200">
+                    <h2 className="text-3xl font-bold text-gray-900 ml-10 mt-5 capitalize">{book.title}</h2>
+                    <div className="absolute top-5 right-0 bg-green-100 text-gray-700 text-xs font-semibold px-2 py-1 rounded-full border border-green-200">
                         Available
                     </div>
                 </div>
-                <p className="text-gray-600 flex items-center mb-4 ml-10 text-lg">
+                <p className="text-gray-600 flex items-center mb-4 ml-10 text-lg capitalize">
                     {/* Author Icon */}
                     <svg xmlns="http://www.w3.org/2000/svg" className=" text-sm h-5 w-5 mr-2 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
                         <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
@@ -125,7 +119,7 @@ function SinglePage (){
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-700">
                 {/* ISBN */}
-                <div className="flex items-center">
+                <div className="flex items-center ml-8">
                     {/* Icon for ISBN/Pages */}
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
                         <path d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2h2a2 2 0 002-2V6a2 2 0 00-2-2H4zm10 0a2 2 0 00-2 2v4a-2 2 0 002 2h2a2 2 0 002-2V6a2 2 0 00-2-2h-2zm-6 8a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4z" />
@@ -149,7 +143,7 @@ function SinglePage (){
                 </div>
 
                 {/* Published Year */}
-                <div className="flex items-center">
+                <div className="flex items-center ml-8">
                     {/* Icon for Calendar */}
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
                         <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
@@ -173,15 +167,15 @@ function SinglePage (){
                 </div>
 
                 {/* Genre */}
-                <div className="flex items-center">
-                    {/* Icon for Genre (Book icon, or something similar) */}
+                <div className="flex items-center ml-8">
+                    {/* Icon for Genre (Book icon */}
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
                         <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
                         <path fillRule="evenodd" d="M4 5a2 2 0 012-2h4.586A2 2 0 0113 3.414L16.586 7A2 2 0 0117 8.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 1h2v2H7V6zm3 0h2v2h-2V6zm3 0h2v2h-2V6z" clipRule="evenodd" />
                     </svg>
                     <div>
                         <p className="font-medium text-gray-600 text-sm">Genre</p>
-                        <p>Classic Literature</p>
+                        <p>{book.category}</p>
                     </div>
                 </div>
             </div>
