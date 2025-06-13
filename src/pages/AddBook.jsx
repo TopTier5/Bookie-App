@@ -1,30 +1,38 @@
 import React from "react";
 import { apiClient } from "../api/client";
 import { Link } from "react-router";
+import SubmitButton from "../components/SubmitButton";
+import { useNavigate } from "react-router";
 
 
 
 
 export default function AddBook() {
-    const postBook = (event) => {
-        event.preventDefault();
+    const navigate = useNavigate();
 
-        // Collect form input
-        const data = new FormData(event.target);
+    const postBook = async (data) => {
+        
 
         // Post data to api
-        apiClient
-            .post("/api/v1/books", data, {
+        try {
+            const response = await apiClient.post("/api/v1/books", data, {
                 headers: {
                     "Content-Type": "application/json",
                 },
-            })
-            .then((response) => {
-                console.log(response);
-            })
-            .catch((error) => {
-                console.log(error);
             });
+            console.log(response);
+            navigate("/displaypages");
+        }
+            catch (error) {
+            console.log(error);
+
+
+
+        }
+        
+                  
+               
+        
     };
     return (
         <>
@@ -56,7 +64,7 @@ export default function AddBook() {
 
             <section className="bg-[#FFF3DF] py-8">
                 <div className="w-[60%] mx-auto bg-[#FFFDF8]  border border-[#FDE68A] rounded-2xl shadow-lg p-8 ">
-                    <form onSubmit={postBook} className="flex flex-col space-y-6 text-center">
+                    <form action={postBook} className="flex flex-col space-y-6 text-center">
                         <h1 className="text-black text-2xl font-bold "> 📖 Add New Book</h1>
                         <h3 className="text-black">Fill in the details below to add a new book to your library.</h3>
 

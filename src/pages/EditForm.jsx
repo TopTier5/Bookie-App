@@ -2,8 +2,11 @@ import { Link } from "react-router";
 import { useSearchParams } from "react-router";
 import { useEffect, useState } from "react";
 import { apiClient } from "../api/client";
+import SubmitButton from "../components/SubmitButton";
 
-function EditForm() {
+
+export default function EditForm() {
+    const navigate = useNavigate();
     const [searchParams] = useSearchParams();
     const id = searchParams.get('id');
 
@@ -23,26 +26,21 @@ function EditForm() {
     useEffect(getBook, []);
 
 
-    const putBook = (event) => {
-        event.preventDefault();
+    const putBook = async (data) => {
+        //   post data to api
+        try {
 
-        // Collect form input
-        const data = new FormData(event.target);
-
-        // Post data to api
-        
-        apiClient.put(`/api/v1/books/${id}`, data, {
-            headers: {
-                "Content-Type": "application/json",
-            },
-        })
-            .then((response) => {
-                console.log(response);
-            })
-            .catch((error) => {
-                console.log(error);
+            const response = await apiClient.put(`/api/v1/books/${id}`, data, {
+                headers: {
+                    "Content-Type": "application/json",
+                },
             });
-    };
+            console.log(response);
+            navigate(-1);
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
     return (
         <>
@@ -68,7 +66,7 @@ function EditForm() {
 
             <section className="bg-[#FFF3DF] py-8 ">
                 <div className="w-[60%] mx-auto my-[5%] bg-[#FFFDF8]  border border-[#FDE68A] rounded-2xl shadow-lg p-8">
-                    <form onSubmit={putBook} className="flex flex-col space-y-6 text-center">
+                    <form action={putBook} className="flex flex-col space-y-6 text-center">
                         <h1 className="text-black text-2xl font-bold self-center"> 📔 Edit Book</h1>
 
                         <div className="grid grid-cols-2 gap-4 justify-between space-x-4">
@@ -121,23 +119,23 @@ function EditForm() {
 
 
                         <div className="w-120%">
-                                <label className="block mb-2 font-bold text-black">Cover Image URL</label>
-                                <input
-                                    type="text"
-                                    name="image"
-                                    className="w-full border border-blue-200 rounded px-4 py-2"
-                                />
-                            </div>
-                            
+                            <label className="block mb-2 font-bold text-black">Cover Image URL</label>
+                            <input
+                                type="text"
+                                name="image"
+                                className="w-full border border-blue-200 rounded px-4 py-2"
+                            />
+                        </div>
+
 
                         <div className="w-120%">
-                                <label className="block mb-2 font-bold text-black">Description</label>
-                                <input
-                                    type="text"
-                                    name="description"
-                                    className="w-full border border-blue-200 rounded px-4 py-2"
-                                />
-                            </div>    
+                            <label className="block mb-2 font-bold text-black">Description</label>
+                            <input
+                                type="text"
+                                name="description"
+                                className="w-full border border-blue-200 rounded px-4 py-2"
+                            />
+                        </div>
 
 
                         <div className="flex justify-end">
@@ -157,4 +155,4 @@ function EditForm() {
 }
 
 
-export default EditForm; 
+ 
