@@ -42,19 +42,23 @@ function DisplayPages() {
                     </svg>
                 </Link>
 
-                <div className="hidden md:flex border rounded-lg border-gray-50 bg-gray-50 w-[50%] h-10 mt-5 justify-around items-center ml-5">
-                    <Link to='/' className="hover:bg-white px-2 py-2 rounded text-sm font-medium bg-white cursor-pointer ml-0">Home</Link>
+                <div className="hidden md:flex md:justify-start  h-10 mt-5 pt-8 justify-around items-center ml-5">
+                    <Link to='/' className="hover:bg-gray-200 px-2 py-2 rounded text-sm font-medium bg-white cursor-pointer ml-0">Home</Link>
                     
-                    <div className="flex-grow md:flex-grow-0 w-full md:w-auto">
+                    <div className="flex justify-center md:flex-grow-0 w-full md:w-auto ">
                         <input
                             type="text"
                             placeholder="🔍 Search books..."
-                            className="border border-gray-300 rounded-md px-4 py-2 text-sm w-full md:w-80"
+                            className="border bg-white border-gray-300 rounded-lg px-4 py-2 text-sm w-full md:w-80 ml-5 "
                             value={searchTerm}
                             onChange={handleSearchChange}
                         />
                     </div>
+                    
                 </div>
+                
+
+
 
                 <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-5 sm:grid-cols-2 p-5">
                     {filteredBooks.length > 0 ? (
