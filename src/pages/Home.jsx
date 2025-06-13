@@ -31,22 +31,22 @@ function Home() {
                     <Navbar />
                     <main className="p-6 bg-[#404c6d] flex-1 overflow-auto">
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-5">
-                            <div className="border bg-white font-sans p-4  border-pink-400 rounded shadow text-black">
+                            <div className="border bg-white font-sans p-4  border-[#3B82F6] rounded shadow text-black">
                                 <h1 className="text-sm font-bold">Total Books <span className="text-2xl">📘</span></h1>
                                 <p className="text-2xl font-bold">30</p>
                                 <h5 className="text-xs">Total collection</h5>
                             </div>
-                            <div className="border bg-white font-sans p-4 border-pink-400 rounded shadow text-black">
+                            <div className="border bg-white font-sans p-4 border-[#10B981] rounded shadow text-black">
                                 <h1 className="text-sm font-bold">Available <span className="text-2xl">✅</span></h1>
                                 <p className="text-2xl text-emerald-800 font-bold">14</p>
                                 <h5 className="text-xs">Books available</h5>
                             </div>
-                            <div className="border bg-white font-sans p-4 border-pink-400 rounded shadow text-black">
+                            <div className="border bg-white font-sans p-4 border-[#F59E0B] rounded shadow text-black">
                                 <h1 className="text-sm font-bold">Checked out<span className="text-2xl" >📊</span></h1>
                                 <p className="text-2xl  text-orange-600 font-bold">10</p>
                                 <h5 className="text-xs">Books checked out</h5>
                             </div>
-                            <div className="border bg-white font-sans border-pink-400 p-4 rounded shadow text-black">
+                            <div className="border bg-white font-sans border-[#8B5CF6] p-4 rounded shadow text-black">
                                 <h1 className="text-lg font-bold">Reserved <span className="text-2xl" >🪪</span></h1>
                                 <p className="text-2xl text-violet-900 font-bold">6</p>
                                 <h5 className="text-xs">Books reserved</h5>
