@@ -86,7 +86,7 @@ function SinglePage (){
         <div className="absolute top-7 left-4 bg-green-100 border-green-200 text-black text-xs font-semibold px-3 py-1 rounded-full hover:bg-white mt-0">
             Available
         </div>
-        <img src={book.image} className="w-[200] h-[200] rounded-lg object-contain shadow-sm p-0 bg-white mt-5" />
+        <img src={book.image} className="w-200 h-200 rounded-lg object-contain shadow-sm p-0 bg-white mt-5" />
     </div>
 
     {/* Right Section - Description and Info */}
